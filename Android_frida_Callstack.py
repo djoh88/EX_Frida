@@ -34,12 +34,11 @@ Java.perform(function() {
 
 		RobertTest.setName.implementation = function () {
         console.log("");
-        console.log("***********test***********");
         console.log("[+] Method Hooking Start!");
 		throwable2 = throwable.$new();
-		a = throwable2.getStackTrace();
-		for ( i=0; i<a.length; i++){
-				console.log("[+] ClassName : " + a[i].getClassName()+ ", [+] MethodName : " + a[i].getMethodName());
+		output = throwable2.getStackTrace();
+		for ( i=0; i<output.length; i++){
+				console.log("[+] ClassName : " + output[i].getClassName()+ ", [+] MethodName : " + output[i].getMethodName());
 			}
 
     };
@@ -53,15 +52,3 @@ print(Fore.YELLOW + '[+] Frida Attached!')
 script.load()
 sys.stdin.read()
 
-
-
-'''
-    MainActivity.isDebuggable.overload('android.content.Context').implementation = function (str) {
-        console.log("***********isDebuggable***********");
-        console.log("[+] Method Hooking Start!");
-        return false;
-        console.log("[+] Method Hooking Finish!");
-        console.log("**************************");
-        console.log("");
-        
-    };'''
