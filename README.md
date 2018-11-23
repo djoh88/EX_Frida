@@ -1,2 +1,2 @@
 # EX_Frida
-Frida 공부용
+## Frida 공부용
